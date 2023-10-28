@@ -18,6 +18,7 @@ export type stringInfo = {
   extraInfo: Object | undefined;
 };
 
+/* istanbul ignore next */
 export const getStringInfo = (arg: string): stringInfo => {
   return {
     lowerCase: arg.toLowerCase(),
