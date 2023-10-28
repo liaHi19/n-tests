@@ -13,7 +13,7 @@ describe("Utils tests suite", () => {
     expect(actual).toBe(expected);
   });
 
-  describe("StringUtils tests", () => {
+  describe.only("StringUtils tests", () => {
     let sut: StringUtils;
 
     beforeEach(() => {
@@ -26,7 +26,7 @@ describe("Utils tests suite", () => {
       console.log("Tear down");
     });
 
-    it("should return correct UpperCase", () => {
+    it.only("should return correct UpperCase", () => {
       const actual = sut.toUpperCase("abc");
 
       expect(actual).toBe("ABC");
@@ -45,7 +45,7 @@ describe("Utils tests suite", () => {
       }).toThrowError("Invalid argument!");
     });
 
-    it.only("Should throw error on invalid argument - try catch block", (done) => {
+    it("Should throw error on invalid argument - try catch block", (done) => {
       try {
         sut.toUpperCase("");
         done("error");
