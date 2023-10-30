@@ -6,6 +6,21 @@ export type stringInfo = {
   extraInfo: Object | undefined;
 };
 
+type LoggerServiceCallback = (arg: string) => void;
+
 export const calculateComplexity = (stringInfo: stringInfo): number => {
   return Object.keys(stringInfo.extraInfo).length * stringInfo.length;
+};
+
+export const toUpperCaseWithCb = (
+  arg: string,
+  callback: LoggerServiceCallback
+) => {
+  if (!arg) {
+    callback("Invalid argument");
+    return;
+  }
+  callback(`call function with ${arg}`);
+
+  return arg.toUpperCase();
 };
