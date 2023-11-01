@@ -1,3 +1,5 @@
+import { v4 } from "uuid";
+
 export type stringInfo = {
   lowerCase: string;
   upperCase: string;
@@ -25,6 +27,7 @@ export const toUpperCaseWithCb = (
   return arg.toUpperCase();
 };
 
+// for spies
 export class OtherStringUtils {
   public toUpperCase(arg: string) {
     return arg.toUpperCase();
@@ -38,3 +41,13 @@ export class OtherStringUtils {
     console.log("External service");
   }
 }
+
+// testing modules
+
+export const toUpperCase = (arg: string) => {
+  return arg.toUpperCase();
+};
+
+export const toLowerCaseWithId = (arg: string) => {
+  return arg.toLowerCase() + v4();
+};
